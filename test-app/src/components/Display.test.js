@@ -9,4 +9,11 @@ describe('display', () => {
     it('renders without crashing', () => {
         rtl.render(<Display />)
     });
-})
+});
+
+test('balls and strikes', () => {
+    const { getByText } = rtl.render(<Display />);
+
+    getByText(/balls/i);
+    getByText(/strikes/i);
+});

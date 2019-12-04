@@ -9,4 +9,13 @@ describe('dashboard', () => {
     it('renders without crashing', () => {
         rtl.render(<Dashboard />)
     });
-})
+});
+
+test('strike, ball, foul, and hit are rendered', () => {
+    const { getByText } = rtl.render(<Dashboard />);
+
+    getByText(/strike/i);
+    getByText(/ball/i);
+    getByText(/foul/i);
+    getByText(/hit/i);
+});
